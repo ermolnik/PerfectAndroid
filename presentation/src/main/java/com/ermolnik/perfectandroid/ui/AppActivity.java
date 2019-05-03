@@ -7,17 +7,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.ermolnik.perfectandroid.App;
 import com.ermolnik.perfectandroid.R;
+import com.ermolnik.perfectandroid.interactors.MainInteractor;
+
+import javax.inject.Inject;
 
 
-public class MainActivity extends AppCompatActivity {
+public class AppActivity extends AppCompatActivity {
+
+    @Inject
+    MainInteractor mainInteractor;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+      App.getApp().getAppComponent().inject(this);
+
+
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
+
+      TextView textView = findViewById(R.id.text);
+
+      textView.setText(mainInteractor.getMockedUser().toString());
 
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
