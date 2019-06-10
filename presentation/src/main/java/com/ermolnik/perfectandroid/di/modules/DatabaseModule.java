@@ -1,6 +1,6 @@
 package com.ermolnik.perfectandroid.di.modules;
 
-import android.arch.persistence.room.Room;
+import androidx.room.Room;
 import android.content.Context;
 
 import com.ermolnik.perfectandroid.db.MainDatabase;

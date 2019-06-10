@@ -1,7 +1,7 @@
 package com.ermolnik.perfectandroid.db;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 
 import com.ermolnik.perfectandroid.db.userinfo.UserDao;
 import com.ermolnik.perfectandroid.db.userinfo.UserEntity;
